@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import { useFormik } from 'formik';
 import { signupschema } from '../schemas/login';
+import axios from "axios";
 const initialValues={
     
     cont:"",
@@ -20,6 +21,29 @@ function Login(){
         validationSchema:signupschema,
         onSubmit:(values,action) => {
             console.log("🚀 ~ file: Login.js:8 ~ Login ~ values:", values);
+            console.log(values.cont);
+
+            axios({
+              method: 'post',
+              url: '/login',
+              data: {
+                username: values.cont,
+                password: values.pass
+              }
+            }).then((response) => {
+
+              localStorage.setItem("login",response.id);
+              console.log('response id ', response._id );
+              
+              // Logout Code
+              // localStorage.removeItem("login")
+              
+              
+              // window.location.href="";  -->Redirect
+            }, (error) => {
+              console.log(error);
+            });;
+
             action.resetForm();
         },
       });
