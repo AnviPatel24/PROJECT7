@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import { useFormik } from 'formik';
 import { signupschema } from '../schemas/login';
 import axios from "axios";
+
 const initialValues={
     
     cont:"",
@@ -19,31 +20,21 @@ function Login(){
     const {values,errors,touched,handleBlur,handleChange,handleSubmit} = useFormik({
         initialValues: initialValues,
         validationSchema:signupschema,
-        onSubmit:(values,action) => {
+        onSubmit:async (values,action) => {
             console.log("🚀 ~ file: Login.js:8 ~ Login ~ values:", values);
             console.log(values.cont);
 
-            axios({
-              method: 'post',
-              url: '/login',
-              data: {
-                username: values.cont,
-                password: values.pass
-              }
-            }).then((response) => {
-
-              localStorage.setItem("login",response.id);
-              console.log('response id ', response._id );
-              
-              // Logout Code
-              // localStorage.removeItem("login")
-              
-              
-              // window.location.href="";  -->Redirect
-            }, (error) => {
-              console.log(error);
-            });;
-
+            const data = await axios.post('http://192.168.141.227:8080/login', {
+            contact_number: values.cont,
+            hpassword: values.pass,
+            
+          }, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }
+        )
+        
             action.resetForm();
         },
       });

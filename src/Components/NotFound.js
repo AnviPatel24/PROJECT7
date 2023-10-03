@@ -10,7 +10,12 @@
 import React from "react";
 function App() {
        return(
-              <h1>Not Found</h1>
+              <>
+              <div style={{ scrollY: "hidden", scrollbarWidth:"none" }}>
+              <img src="../assets/images/logos/404.png" alt="Error Page" width="100%" style={{position:"relative"}}></img>
+              <div style={{position:"absolute",color:"white", top:"77%", paddingLeft:"30%", fontSize:22}}><p>We tried really hard but couldn't find the page you were looking for.<br></br>You may find what you were looking for on our <a href="/Login" style={{color:"green"}}> homepage.</a></p></div>
+              </div>
+              </>
        );
 }
 
