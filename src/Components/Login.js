@@ -24,16 +24,24 @@ function Login(){
             console.log("🚀 ~ file: Login.js:8 ~ Login ~ values:", values);
             console.log(values.cont);
 
-            const data = await axios.post('http://192.168.141.227:8080/login', {
-            contact_number: values.cont,
-            hpassword: values.pass,
-            
-          }, {
+            axios.post('http://localhost:8080/login', {
+              contact_number: values.cont,
+              hpassword: values.pass
+            },{
             headers: {
               'Content-Type': 'multipart/form-data'
             }
-          }
-        )
+          })
+            .then((response) => {
+              console.log("hh",response.data[1][0]['_id']);
+
+              localStorage.setItem('loginid',response.data[1][0]['_id']);
+              if(response.status === 200){
+                window.location.href='/Dash';
+              }
+            }, (error) => {
+              console.log(error);
+            });
         
             action.resetForm();
         },
@@ -44,7 +52,7 @@ function Login(){
             <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
     <div
-     className="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+    className="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
       <div className="d-flex align-items-center justify-content-center w-100">
         <div className="row justify-content-center w-100">
           <div className="col-md-8 col-lg-6 col-xxl-3">
@@ -72,7 +80,7 @@ function Login(){
                     <Link className="text-primary fw-bold" href="./index.html">Forgot Password ?</Link>
                   </div>
                   <button type="submit" className="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign In</button>
-                 
+                
                 </form>
               </div>
             </div>
