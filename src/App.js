@@ -7,39 +7,51 @@ import { BrowserRouter as Router, Routes, Route,  Navigate } from 'react-router-
 import Login from "./Components/Login";
 //import Regotp from "./Components/Regotp";
 import Addmenu from "./Components/Addmenu";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
+
 
 
 
 function App() {
-
-  let userLogged;
-
+  const [myVariable, setMyVariable] = useState(localStorage.getItem('loginid'));
+  if (!myVariable && window.location.pathname !== "/Login") {
+    console.log("User not logged in ");
+    window.location.href = "/Login";
+  }
   useEffect(() => {
     function checkUserData() {
-      userLogged = localStorage.getItem("login");
+      const userLogged = localStorage.getItem('loginid');
       
-      if (!userLogged) {
-        console.log("User not logged in ")
-
-        window.location.href = "/Login";
-      }
-
+  
+      console.log("local", localStorage.getItem('loginid'));
+      console.log(userLogged);
+  
+      
     }
-
+  
+    // Initial check when component mounts
+    checkUserData();
+  
+    // Listen for changes in localStorage
     window.addEventListener("storage", checkUserData);
-
+  
+    // Cleanup the event listener when the component unmounts
     return () => {
       window.removeEventListener("storage", checkUserData);
     };
   }, []);
+  
+
+  
 
   return (
     <>
-      {userLogged ? (
+    {/* <h1>{myVariable}</h1> */}
+      {myVariable ? (
         // is user login then --> Dashboard Page 
 
         // Old code
+
         <Router>
           <div className="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
             data-sidebar-position="fixed" data-header-position="fixed">
@@ -48,8 +60,9 @@ function App() {
               <Header></Header>
               <Routes>
                 <Route path="/Stud" element={<Stud></Stud>}></Route>
-
-                {userLogged ? (
+                <Route path="/Login" element={myVariable? <Stud/> : <Navigate to='/Dash'/>}></Route>
+            
+                {myVariable ? (
                   //Dashboard
                   // logout route
                   <Route path="/Stud" element={<Stud></Stud>}></Route>
@@ -81,11 +94,11 @@ function App() {
           <div className="body-wrapper">
 
             <Routes>
-              <Route path="/Stud" element={userLogged? <Stud/> : <Navigate to='/Login'/>}>
+              <Route path="/Stud" element={myVariable? <Stud/> : <Navigate to='/Login'/>}>
                 
               </Route>
 
-              {userLogged ? (
+              {myVariable ? (
                 //Dashboard
                 // logout route
                 <Route path="/Stud" element={<Stud></Stud>}></Route>
