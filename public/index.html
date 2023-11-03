@@ -10,13 +10,28 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <style>
+      /* CSS for the background image */
+      .background-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Place the background behind other content */
+        background-image: url('./assets/images/logos/ORFF0J0.jpg'); /* Replace 'assets/images/background.jpg' with your image path */
+        background-size: calc(100%);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Modernize Free</title>
-  <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png" />
+    <title>Plate Planner</title>
+  <link rel="shortcut icon" type="image/png" href="assets/images/logos/ren-removebg-preview.png" />
   <link rel="stylesheet" href="assets/css/styles.min.css" />
   </head>
   <body>

@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 function Header() {
+  var username=localStorage.getItem('User')
     return (
     <>
      <header className="app-header">
@@ -11,14 +12,15 @@ function Header() {
                 <i className="ti ti-menu-2"></i>
               </Link>
             </li>
-            <li className="nav- item">
+            <p style={{fontSize:30}}><b>Hello {username}</b></p>
+            {/* <li className="nav- item">
               <Link className="nav-link nav-icon-hover" to="javascript:void(0)">
                 <i className="ti ti-bell-ringing"></i>
                 <div className="notification bg-primary rounded-circle"></div>
               </Link>
-            </li>
+            </li> */}
           </ul>
-          <div className="navbar-collapse justify-content-end px-0" id="navbarNav">
+          {/* <div className="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul className="navbar-nav flex-row ms-auto align-items-center justify-content-end">
               <li className="nav-item dropdown">
                 <Link className="nav-link nav-icon-hover" to="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
@@ -44,7 +46,7 @@ function Header() {
                 </div>
               </li>
             </ul>
-          </div>
+          </div> */}
         </nav>
       </header>
     </>

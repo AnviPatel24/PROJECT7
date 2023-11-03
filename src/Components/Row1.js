@@ -2,7 +2,7 @@ import React from "react";
 function Row1(){
     return(
     <>
-    <div className="container-fluid">
+    <div className="container-fluid d-flex">
     <div className="col-lg-4">
         <div className="row">
           <div className="col-lg-12">

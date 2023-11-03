@@ -9,9 +9,8 @@ function Navbar() {
      
       <div>
         <div className="brand-logo d-flex align-items-center justify-content-between">
-          <Link to="./index.html" className="text-nowrap logo-img">
-            <img src='../../assets/images/logos/dark-logo.svg' width="180" alt="" />
-          </Link>
+        <img src="assets/images/logos/ren-removebg-preview.png" width="60"  alt=""/> <p className="text-nowrap text-center d-block w-100" style={{ marginTop: '0px', marginLeft:'-8px', marginBottom:'-6px', color:"black" }}><b style={{fontSize:22}}>PlatePlanner </b></p>
+                
           <div className="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i className="ti ti-x fs-8"></i>
           </div>
@@ -37,9 +36,17 @@ function Navbar() {
             <li className="sidebar-item">
               <Link className="sidebar-link" to="/Stud" aria-expanded="false">
                 <span>
-                  <i className="ti ti-article"></i>
+                <i className="ti ti-user-plus"></i>
                 </span>
                 <span className="hide-menu">Hosteller Registration</span>
+              </Link>
+            </li>
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/Handler" aria-expanded="false">
+                <span>
+                <i className="ti ti-user-plus"></i>
+                </span>
+                <span className="hide-menu">Mess Handler Registration</span>
               </Link>
             </li>
             <li className="sidebar-item">
@@ -51,6 +58,42 @@ function Navbar() {
               </Link>
             </li>
             <li className="sidebar-item">
+              <Link className="sidebar-link" to="/Viewmenu" aria-expanded="false">
+                <span>
+                  <i className="ti ti-alert-circle"></i>
+                </span>
+                <span className="hide-menu">View Menu</span>
+              </Link>
+            </li>
+            <li className="nav-small-cap">
+              <i className="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span className="hide-menu">Users</span>
+            </li>
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/Viewhost" aria-expanded="false">
+                <span>
+                  <i className="ti ti-article"></i>
+                </span>
+                <span className="hide-menu">Hostellers</span>
+              </Link>
+            </li>
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/Viewhand" aria-expanded="false">
+                <span>
+                  <i className="ti ti-article"></i>
+                </span>
+                <span className="hide-menu">Mess Handlers</span>
+              </Link>
+            </li>
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/Viewguest" aria-expanded="false">
+                <span>
+                  <i className="ti ti-article"></i>
+                </span>
+                <span className="hide-menu">Guests</span>
+              </Link>
+            </li>
+            {/* <li className="sidebar-item">
               <Link className="sidebar-link" to="/ui-card.html" aria-expanded="false">
                 <span>
                   <i className="ti ti-cards"></i>
@@ -73,20 +116,28 @@ function Navbar() {
                 </span>
                 <span className="hide-menu">Typography</span>
               </Link>
-            </li>
+            </li> */}
             <li className="nav-small-cap">
               <i className="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span className="hide-menu">AUTH</span>
             </li>
             <li className="sidebar-item">
-              <Link className="sidebar-link" to="/Login" aria-expanded="false">
+              <Link className="sidebar-link" to="/ChangeP" aria-expanded="false">
                 <span>
-                  <i className="ti ti-login"></i>
+                  <i className="ti ti-password"></i>
                 </span>
-                <span className="hide-menu">Login</span>
+                <span className="hide-menu">Change Password</span>
               </Link>
             </li>
             <li className="sidebar-item">
+              <Link className="sidebar-link" to="/Logout" aria-expanded="false">
+                <span>
+                  <i className="ti ti-login"></i>
+                </span>
+                <span className="hide-menu">Logout</span>
+              </Link>
+            </li>
+            {/* <li className="sidebar-item">
               <Link className="sidebar-link" to="/authentication-register.html" aria-expanded="false">
                 <span>
                   <i className="ti ti-user-plus"></i>
@@ -113,7 +164,7 @@ function Navbar() {
                 </span>
                 <span className="hide-menu">Sample Page</span>
               </Link>
-            </li>
+            </li> */}
           </ul>
           
         </nav>
