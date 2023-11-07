@@ -24,7 +24,7 @@ function Stud () {
       onSubmit: (values, action) => {
         axios
           .post(
-            'http://192.168.43.54:8080/hreg',
+            'http://172.20.10.3:8080/hreg',
             {
               fname: values.fname,
               lname: values.lname,

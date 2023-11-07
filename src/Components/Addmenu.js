@@ -20,13 +20,12 @@ function Addmenu(){
 
           axios
           .post(
-            'http://192.168.43.54:8080/menu',
+            'http://172.20.10.3:8080/menu',
             {
               days: values.days,
               Lunch: values.Lunch,
               Breakfast: values.Breakfast,
               Dinner: values.Dinner,
-             
             },
             {
               headers: {

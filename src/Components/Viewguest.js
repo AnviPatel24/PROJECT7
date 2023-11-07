@@ -6,7 +6,7 @@ function Viewguest() {
     const [searchTerm, setSearchTerm] = useState("");
     useEffect(() => {
         // Replace 'apiUrl' with the actual URL of the server endpoint
-        const apiUrl = 'http://192.168.43.54:8080/showgh';
+        const apiUrl = 'http://172.20.10.3:8080/showgh';
 
         axios.post(apiUrl)
             .then((response) => {
@@ -23,7 +23,7 @@ function Viewguest() {
     //Delete Data
     const handleDelete = (contact) => {
         axios
-            .post(`http://192.168.43.54:8080/showme`)
+            .post(`http://localhost:8080/showme`)
             .then((response) => {
                 console.log('Deleted Guest ID:', contact);
                 console.log('Guest deleted successfully');

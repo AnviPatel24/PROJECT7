@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 function Viewmenu() {
@@ -6,7 +5,7 @@ function Viewmenu() {
     const [searchTerm, setSearchTerm] = useState("");
     useEffect(() => {
         // Replace 'apiUrl' with the actual URL of the server endpoint
-        const apiUrl = 'http://192.168.43.54:8080/allmenu';
+        const apiUrl = 'http://172.20.10.3http://172.20.10.2:8080/login:8080/allmenu';
 
         axios.post(apiUrl)
             .then((response) => {
@@ -23,7 +22,7 @@ function Viewmenu() {
     //Delete Data
 const handleDelete = (id) => {
     axios
-    .post('http://192.168.43.54:8080/allmenu')
+    .post('http://localhost:8080/allmenu')
     .then((response) => {
       console.log('Deleted Menu ID:', id);
       console.log('Menu deleted successfully');

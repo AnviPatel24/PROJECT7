@@ -7,7 +7,7 @@ function Viewhand({handlerId}) {
    
     useEffect(() => {
         // Replace 'apiUrl' with the actual URL of the server endpoint
-        const apiUrl = 'http://192.168.43.54:8080/showme';
+        const apiUrl = 'http://172.20.10.3:8080/showme';
 
         axios.post(apiUrl)
             .then((response) => {

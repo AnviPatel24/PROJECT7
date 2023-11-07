@@ -24,7 +24,7 @@ function Handler () {
       onSubmit: (values, action) => {
         axios
           .post(
-            'http://192.168.43.54:8080/hnreg',
+            'http://172.20.10.3:8080/hnreg',
             {
               fname: values.fname,
               lname: values.lname,

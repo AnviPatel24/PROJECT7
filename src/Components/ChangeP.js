@@ -24,7 +24,7 @@ function ChangeP(){
             console.log("🚀 ~ file: ChangeP.js:8 ~ ChangeP ~ values:", values);
             console.log(values.oldpass,values.newpass,contact);
 
-            axios.post('http://192.168.43.54:8080/chpass', {
+            axios.post('http://172.20.10.3:8080/chpass', {
             contact_number:contact,
               hpassword: values.oldpass,
               newpassword: values.newpass,

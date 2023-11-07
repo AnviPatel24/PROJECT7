@@ -65,6 +65,14 @@ function Navbar() {
                 <span className="hide-menu">View Menu</span>
               </Link>
             </li>
+            <li className="sidebar-item">
+              <Link className="sidebar-link" to="/Bar" aria-expanded="false">
+                <span>
+                  <i className="ti ti-article"></i>
+                </span>
+                <span className="hide-menu">Guests Analysis</span>
+              </Link>
+            </li>
             <li className="nav-small-cap">
               <i className="ti ti-dots nav-small-cap-icon fs-4"></i>
               <span className="hide-menu">Users</span>
@@ -85,6 +93,7 @@ function Navbar() {
                 <span className="hide-menu">Mess Handlers</span>
               </Link>
             </li>
+            
             <li className="sidebar-item">
               <Link className="sidebar-link" to="/Viewguest" aria-expanded="false">
                 <span>

@@ -15,6 +15,7 @@ import Viewhost from "./Components/Viewhost";
 import Viewhand from "./Components/Viewhand";
 import Viewguest from "./Components/Viewguest";
 import Viewmenu from "./Components/Viewmenu";
+import BarChart from "./Components/Bar";
 var userLogged;
 
 
@@ -78,6 +79,7 @@ function App() {
                   <Route path="/Viewguest" element={<Viewguest></Viewguest>}></Route>
                   <Route path="/Viewmenu" element={<Viewmenu></Viewmenu>}></Route>
                   <Route path="/Logout" element={<Logout></Logout>}></Route>
+                  <Route path="/Bar" element={<BarChart></BarChart>}></Route>
                   </>
 
                 ) : (
