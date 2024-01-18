@@ -5,7 +5,7 @@ function Viewmenu() {
     const [searchTerm, setSearchTerm] = useState("");
     useEffect(() => {
         // Replace 'apiUrl' with the actual URL of the server endpoint
-        const apiUrl = 'http://172.20.10.3http://172.20.10.2:8080/login:8080/allmenu';
+        const apiUrl = 'http://172.20.10.3:8080/allmenu';
 
         axios.post(apiUrl)
             .then((response) => {
